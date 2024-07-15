@@ -13,10 +13,11 @@
     <!-- AQUI EMPEZAMOS L;A SECCION DE ENCRIPTAR-->
     <Main class="contenedor">
         <section class="contenedor__encriptar">
-            <textarea name="texto-encriptar" class="texto-encriptar" placeholder="Ingrese el Texto Aqui"></textarea>
+            <textarea name="texto-encriptar" class="contenedor__texto__encriptar" placeholder="Ingrese el Texto Aqui"></textarea>
+            <span class="contenedor__encriptar__mensaje"> <img src="./assets/signo-de-exclamacion.png" alt="signo-de-exclamacion" class="contenedor__encriptar__signo">Letras Minusculas y sin acentos</span>
             <div class="contenedor__encriptar__botones">
-                <button class="boton-encriptar">Encriptar</button>
-                <button class="boton-desencriptar">Encriptar</button>   
+                <button class="boton-encriptar" onclick="encriptarTexto()">Encriptar</button>
+                <button class="boton-desencriptar" onclick="desencriptarTexto()">Desencriptar</button>   
             </div>
           
         </section>
@@ -24,9 +25,15 @@
         <!-- AQUI EMPEZAMOS L;A SECCION DE DESENCRIPTAR-->
 
         <section class="contenedor__desencriptar">
-            <textarea name="texto-desencriptar" class="texto-desencriptar"></textarea>
+            <textarea name="texto-desencriptar" class="contenedor__texto__desencriptar"></textarea>
+            <div class="contenedor__desencriptar__letras">
+                <img src="./assets/Muñeco.png" alt="muñeco" class="contenedor__desencriptar__imagen">
+                <h1>Ningun mensaje fue encontrado</h1>
+                <p class="contenedor__desencriptar__mensaje">ingresa el texto que deses encriptar o desencriptar</p>
+            </div>
+
             <div class="contenedor__desencriptar__botones">
-                <button class="boton-copiar">Copiar</button>   
+                <button class="boton-copiar" onclick="copiarTexto()">Copiar</button>   
             </div>
             
         </section>
@@ -35,6 +42,6 @@
     <!--ESTE ES NUESTRO PIE DE PAGINA-->
     <footer></footer>
    
-    
+    <script src="./index.js"></script>
 </body>
 </html>
