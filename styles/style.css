@@ -25,7 +25,7 @@ body{
     justify-content: space-around;
     background-color: var(--color-secundario);
     font-family: var(--fuente);
-    height: 100%;
+    height: 100vh;
 }
 
 .contenedor{
