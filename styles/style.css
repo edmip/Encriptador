@@ -22,10 +22,10 @@
 body{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     background-color: var(--color-secundario);
     font-family: var(--fuente);
-    height: 100vh;
+    height: 100%;
 }
 
 .contenedor{
@@ -103,7 +103,7 @@ button:hover{
     justify-content: center;
     gap: 10px;
     align-items: center;
-    width: 100%;
+    min-width: 100%;
     margin: 10px 0px 0px 0px;
 }
 
@@ -157,6 +157,7 @@ footer{
     font-size: 0.8rem;
     color: var(--color-primario);
     width: 100%;
+    margin-top: 7px;
 }
 
 
