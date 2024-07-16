@@ -14,7 +14,7 @@
 }  
 
 .cabecera{
-    padding: 10px 0px;
+    padding-top: 10px;
     margin-bottom: 10px;
     background-color: var(--color-secundario);
 }
@@ -22,6 +22,7 @@
 body{
     background-color: var(--color-secundario);
     font-family: var(--fuente);
+    height: 100vh;
 }
 
 .contenedor{
@@ -45,7 +46,7 @@ textarea{
     text-align: center;
     border: none;
     resize: none;
-    text-transform: uppercase;
+    text-transform: lowercase;
     padding-top: 30px;
 }
 
@@ -64,7 +65,13 @@ textarea:focus{
     align-items: center;
     margin-left: 25px;
     gap: 25px;
-    font-size: 1rem;
+    font-size: 0.8rem;
+}
+
+.contenedor__texto__encriptar::placeholder{
+    color: var(--color-primario);
+    font-family: var(--fuente);
+    font-size: 1.2rem;
 }
 
 .contenedor__encriptar__signo{
@@ -92,8 +99,14 @@ button:hover{
     display: flex;
     justify-content: center;
     gap: 10px;
+    align-items: center;
     width: 100%;
     margin: 10px 0px 0px 0px;
+}
+
+.contenedor__encriptar__limpiar{
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -131,4 +144,53 @@ button:hover{
     width: 100%;
     margin: 10px 0px 7px 0px;
     visibility: hidden;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    align-items: center;
+    font-family: var(--color-primario);
+    font-size: 0.8rem;
+    color: var(--color-primario);
+    height: 35px;
+    width: 100%;
+}
+
+
+/* MEDIAS QUERYES*/
+
+@media screen and (max-width: 1300px) {
+    
+    .contenedor{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+    }
+    
+    section{
+        width: 80%;
+        height: 40vh;
+    }
+
+    .contenedor__desencriptar__letras{
+        position: absolute;
+        font-size: 1rem;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 90%;
+    }
+    .contenedor__desencriptar__imagen{
+       
+        width: 40%;
+        height: 40%;
+    }
+
+
 }

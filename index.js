@@ -5,6 +5,9 @@ let divDesencriptarbotones = document.querySelector(".contenedor__desencriptar__
 let texto;
 let textoDesencriptado;
 
+//VARIABLE REGEX
+const regex = /^[a-z\s]+$/;
+
 
 //CAMPO DONDE SE COLOCA EL TEXTO A ENCRIPTAR
 let areaEncriptar = document.querySelector(".contenedor__texto__encriptar");
@@ -16,15 +19,18 @@ let areaResultado = document.querySelector(".contenedor__texto__desencriptar");
 
 
 //fumciom para poner o quitar visibilidad de campos
-function visibilityCampos(){
-    if(areaResultado !="") {
-        divDesencriptarLetras.style.visibility = "visible";
-}
+function escritura(){
+   
+    if (areaResultado.trim !==""){
+        divDesencriptarLetras.style.visibility = "hidden";
+        divDesencriptarbotones.style.visibility = "visible";
+    }
+       
 
 }
 
 
-//FUNCION PARA POSETAR EN EL CAMPO DEL RESULTADO
+//FUNCION PARA LIMPIAR EN EL CAMPO DEL RESULTADO
 function colocarResultado(texto){
     areaResultado.value = texto;
     divDesencriptarLetras.style.visibility = "hidden";
@@ -35,68 +41,76 @@ function colocarResultado(texto){
 //FUNCION PARA ENCRIPTAR TEXTO
 function encriptarTexto(){
     texto="";
-    const textoParaEncriptar = areaEncriptar.value.toUpperCase();
+    const textoParaEncriptar = areaEncriptar.value.toLowerCase();
     const arrayLetras = Array.from(textoParaEncriptar);
     
-    for(i=0; i<arrayLetras.length; i++){
+    if (regex.test(textoParaEncriptar) && arrayLetras.length > 0){
+
+        for(i=0; i<arrayLetras.length; i++){
+            
+            //USAMOS UN SWITCH PARA CADA CASO (probando switch)
+            switch(arrayLetras[i]) {
+                case 'a':  
+                    arrayLetras[i] = "ai" 
+                    texto += arrayLetras[i];
+                    break
+            
+                case 'e':  
+                    arrayLetras[i] = "enter"
+                    texto += arrayLetras[i];
+                    break
+
+                case 'i':  
+                    arrayLetras[i] = "imes"
+                    texto += arrayLetras[i];
+                    break
+
+                case 'o':  
+                    arrayLetras[i] = "ober"
+                    texto += arrayLetras[i]; 
+                    break
+
+                case 'u':  
+                    arrayLetras[i] = "ufat"
+                    texto += arrayLetras[i];
+                    break
+                default:
+                    texto += arrayLetras[i];
+                break
+            }
         
-        //USAMOS UN SWITCH PARA CADA CASO (probando switch)
-        switch(arrayLetras[i]) {
-            case 'A':  
-                arrayLetras[i] = "Ai" 
-                texto += arrayLetras[i];
-                break
-          
-            case 'E':  
-                arrayLetras[i] = "ENTER"
-                texto += arrayLetras[i];
-                break
+        }
 
-            case 'I':  
-                arrayLetras[i] = "IMES"
-                texto += arrayLetras[i];
-                break
-
-            case 'O':  
-                arrayLetras[i] = "OBER"
-                texto += arrayLetras[i]; 
-                break
-
-            case 'U':  
-                arrayLetras[i] = "UFAT"
-                texto += arrayLetras[i];
-                break
-            default:
-                texto += arrayLetras[i];
-            break
-          }
+        //LLAMAMOS A LA FUNCION PARA COLOCAL EL TEXTO EN EL AREA DE RESULTADO
+        colocarResultado(texto);
+}else{
     
-    }
-
-    //LLAMAMOS A LA FUNCION PARA COLOCAL EL TEXTO EN EL AREA DE RESULTADO
-    colocarResultado(texto);
+    alert("Ingrese texto para Encriptar o Encriptar");
+}
 }
 
 
 //FUNCION PARA DESEMCRIPTAR TEXTO
 function desencriptarTexto() {
-    let textoParaDesencriptar = areaEncriptar.value.toUpperCase();
-    let arraPalabras = ["AI", "ENTER", "IMES", "OBER", "UFAT"];
-    let arraPalabras2 = ["A", "E", "I", "O", "U"];
+    let textoParaDesencriptar = areaEncriptar.value.toLowerCase();
+    let arraPalabras = ["ai", "enter", "imes", "ober", "ufat"];
+    let arraPalabras2 = ["a", "e", "i", "o", "u"];
     let textoDesencriptado = textoParaDesencriptar;
 
-    for (let i = 0; i < arraPalabras.length; i++) {
+    if(regex.test(textoDesencriptado) && textoDesencriptado.length > 0){
+        for (let i = 0; i < arraPalabras.length; i++) {
 
-        if (textoParaDesencriptar.includes(arraPalabras[i])) {
+            if (textoParaDesencriptar.includes(arraPalabras[i])) {
 
-            console.log(textoDesencriptado);
-            textoDesencriptado = textoDesencriptado.replaceAll(arraPalabras[i], arraPalabras2[i]);
-            console.log(textoDesencriptado);
+                textoDesencriptado = textoDesencriptado.replaceAll(arraPalabras[i], arraPalabras2[i]);  
+            }
         }
+        
+        //LLAMAMOS A LA FUNCION PARA COLOCAL EL TEXTO EN EL AREA DE RESULTADO
+        colocarResultado(textoDesencriptado)
+    }else{
+        alert("Ingrese texto para Desencriptar");
     }
-
-    //LLAMAMOS A LA FUNCION PARA COLOCAL EL TEXTO EN EL AREA DE RESULTADO
-    colocarResultado(textoDesencriptado)
 }
 
 
@@ -106,6 +120,13 @@ function copiarTexto(){
     textoCopiado=areaResultado.value;
     navigator.clipboard.writeText(textoCopiado);
 }
+
+//FUINCION DE LIMPIAR EL AREA DE TEXTO DE IZQUIERDA 
+function limpiarTexto(){
+
+    areaEncriptar.value = "";
+}
+
 
         
         
@@ -153,7 +174,7 @@ function copiarTexto(){
 
 /*function desencriptarTexto(){
     textoDesencriptado="";
-    const textoParaDesencriptar = areaEncriptar.value.toUpperCase();
+    const textoParaDesencriptar = areaEncriptar.value.toLowerCase();
     const arrayLetras = Array.from(textoParaDesencriptar);
     
     for(i=0; i<arrayLetras.length; i++){
