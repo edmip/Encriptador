@@ -14,7 +14,6 @@
 }  
 
 .cabecera{
-    padding-top: 10px;
     background-color: var(--color-secundario);
 }
 
@@ -166,22 +165,30 @@ footer{
 
 @media screen and (max-width: 1300px) {
     
+    .cabecera{
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
     .contenedor{
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        gap: 20px;
+        height: 80vh;
     }
     
     section{
         width: 80%;
         height: 35vh;
+        gap: 5px;
     }
 
     .contenedor__desencriptar__letras{
         position: absolute;
         font-size: 1rem;
-        text-align: center;
+        text-align: center; 
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -192,6 +199,10 @@ footer{
        
         width: 40%;
         height: 40%;
+    }
+    
+    footer{
+        height: 10vh;
     }
 
 
