@@ -20,6 +20,9 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: var(--color-secundario);
     font-family: var(--fuente);
     height: 100vh;
@@ -149,13 +152,10 @@ button:hover{
 footer{
     display: flex;
     justify-content: center;
-    position: fixed;
-    bottom: 0px;
     align-items: center;
     font-family: var(--color-primario);
     font-size: 0.8rem;
     color: var(--color-primario);
-    height: 35px;
     width: 100%;
 }
 
@@ -168,7 +168,7 @@ footer{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 35px;
+        gap: 25px;
     }
     
     section{
