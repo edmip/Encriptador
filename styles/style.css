@@ -18,6 +18,10 @@
     background-color: var(--color-secundario);
 }
 
+.cabecera__imagen{
+    height: 35px;
+}
+
 body{
     display: flex;
     flex-direction: column;
