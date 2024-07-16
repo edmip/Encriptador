@@ -15,7 +15,6 @@
 
 .cabecera{
     padding-top: 10px;
-    margin-bottom: 10px;
     background-color: var(--color-secundario);
 }
 
@@ -66,8 +65,8 @@ textarea:focus{
 .contenedor__encriptar__mensaje{
     display: flex;
     align-items: center;
-    margin-left: 25px;
-    gap: 25px;
+    margin-left: 15px;
+    gap: 15px;
     font-size: 0.8rem;
 }
 
@@ -78,9 +77,8 @@ textarea:focus{
 }
 
 .contenedor__encriptar__signo{
-    width: 20px;
-    height: 20px;
-    margin-top: 10px;
+    width: 17px;
+    height: 17px;
 }
 
 button{
@@ -157,7 +155,6 @@ footer{
     font-size: 0.8rem;
     color: var(--color-primario);
     width: 100%;
-    margin-top: 7px;
 }
 
 
