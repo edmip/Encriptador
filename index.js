@@ -85,7 +85,10 @@ function encriptarTexto(){
         colocarResultado(texto);
 }else{
     
-    alert("Ingrese texto para Encriptar o Encriptar");
+    alert("No hay texto para Encriptar o no esta siguiendo con  los siguientes parametros:" + "\n" +
+        "\n" + "Solo Letras Minusculas" +
+        "\n" + "No Numeros" +
+        "\n" + "No Caracteres especiales o acentos");
 }
 }
 
@@ -109,7 +112,10 @@ function desencriptarTexto() {
         //LLAMAMOS A LA FUNCION PARA COLOCAL EL TEXTO EN EL AREA DE RESULTADO
         colocarResultado(textoDesencriptado)
     }else{
-        alert("Ingrese texto para Desencriptar");
+        alert("No hay texto para Desencriptar o no esta siguiendo con  los siguientes parametros:" + "\n" +
+            "\n" + "Solo Letras Minusculas" +
+            "\n" + "No Numeros" +
+            "\n" + "No Caracteres especiales o acentos");
     }
 }
 
