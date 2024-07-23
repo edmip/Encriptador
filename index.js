@@ -85,11 +85,18 @@ function encriptarTexto(){
         colocarResultado(texto);
 }else{
     
-    alert("No hay texto para Encriptar o no esta siguiendo con  los siguientes parametros:" + "\n" +
-        "\n" + "Solo Letras Minusculas" +
-        "\n" + "No Numeros" +
-        "\n" + "No Caracteres especiales o acentos");
+    Swal.fire({
+        title: "¡Ups! Algo salio mal",
+        text: "INTENTA LO SIGUIENTE: \n ✦ Solo Letras Minusculas \n ✦ No Numeros ✦ No Caracteres especiales o acentos ✦",
+        showConfirmButton: false,
+        timerProgressBar: true,
+        timer: 4000,
+        background:  '#F7B0A8',
+      });
+
+      
 }
+//areaEncriptar.focus();
 }
 
 
@@ -112,10 +119,15 @@ function desencriptarTexto() {
         //LLAMAMOS A LA FUNCION PARA COLOCAL EL TEXTO EN EL AREA DE RESULTADO
         colocarResultado(textoDesencriptado)
     }else{
-        alert("No hay texto para Desencriptar o no esta siguiendo con  los siguientes parametros:" + "\n" +
-            "\n" + "Solo Letras Minusculas" +
-            "\n" + "No Numeros" +
-            "\n" + "No Caracteres especiales o acentos");
+                    
+            Swal.fire({
+                title: "¡Ups! Algo salio mal",
+                text: "INTENTA LO SIGUIENTE: \n ✦ Solo Letras Minusculas \n ✦ No Numeros ✦ No Caracteres especiales o acentos",
+                showConfirmButton: false,
+                timer: 4000,
+                timerProgressBar: true,
+                background:  '#F7B0A8',
+              });
     }
 }
 
@@ -125,6 +137,19 @@ function copiarTexto(){
 
     textoCopiado=areaResultado.value;
     navigator.clipboard.writeText(textoCopiado);
+
+  
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 1000,
+        background:  '#C6F7A8',
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Texto Copiado.!"
+      });
 }
 
 //FUINCION DE LIMPIAR EL AREA DE TEXTO DE IZQUIERDA 
