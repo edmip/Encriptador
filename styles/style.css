@@ -15,6 +15,9 @@
 
 .cabecera{
     background-color: var(--color-secundario);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .cabecera__imagen{
@@ -41,6 +44,7 @@ section{
 }
 
 textarea{
+    background-color: var(--color-terciario);
     margin: auto;
     font-size: 1.6rem;
     color: var(--color-primario);
@@ -63,14 +67,16 @@ textarea:focus{
 .contenedor__encriptar{
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .contenedor__encriptar__mensaje{
     display: flex;
     align-items: center;
     margin-left: 15px;
-    gap: 15px;
+    gap: 10px;
     font-size: 0.8rem;
+    color: var(--color-primario);
 }
 
 .contenedor__texto__encriptar::placeholder{
@@ -81,7 +87,7 @@ textarea:focus{
 
 .contenedor__encriptar__signo{
     width: 17px;
-    height: 17px;
+    height: 17px;  
 }
 
 button{
@@ -105,17 +111,15 @@ button:hover{
     gap: 10px;
     align-items: center;
     min-width: 100%;
-    margin: 10px 0px 0px 0px;
 }
 
 .contenedor__encriptar__limpiar{
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
+    
 }
 
-
-
-
+/*AQUI EMPIEZA  EL DESEMCRIPTAR*/
 
 .contenedor__desencriptar{
     display: flex;
@@ -125,7 +129,6 @@ button:hover{
     position: relative;
 }
 
-
 .contenedor__desencriptar__letras{
     position: absolute;
     font-size: 1.1rem;
@@ -134,14 +137,13 @@ button:hover{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
-    
+    color: var(--color-primario);
 }
 
 .contenedor__desencriptar__imagen{
     width: 100%;
     margin-bottom: 5%;
 }
-
 
 .contenedor__desencriptar__botones{
     display: flex;
@@ -161,15 +163,13 @@ footer{
     width: 100%;
 }
 
-
 /* MEDIAS QUERYES*/
 
-@media screen and (max-width: 1100px) and (orientation : portrait) {
+@media screen and (max-width: 900px) and (orientation: portrait){
     
     .cabecera{
         height: 10vh;
         display: flex;
-        justify-content: flex-start;
         align-items: center;
     }
     
@@ -208,7 +208,6 @@ footer{
 
 }
 
-
 @media (orientation : landscape){
     .contenedor__desencriptar__letras{
         position: absolute;
@@ -223,6 +222,6 @@ footer{
 
     button{
         height: 35px;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 }

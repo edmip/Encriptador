@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/switchbtn.css">
     <title>Encriptador</title>
 
 </head>
 <body>
     <header class="cabecera">
         <img src="./assets/Logo.png" class="cabecera__imagen">
+        <label class="switchBtn">
+            <input type="checkbox" id="inputCheck" onclick="cambiaDeColor()">
+            <div class="slide round"></div>
+        </label>
     </header>
     <!-- AQUI EMPEZAMOS L;A SECCION DE ENCRIPTAR-->
     <Main class="contenedor">
         <section class="contenedor__encriptar">
             <textarea name="texto-encriptar" class="contenedor__texto__encriptar" placeholder="Ingrese el Texto Aqui"></textarea>
-            <span class="contenedor__encriptar__mensaje"> <img src="./assets/signo-de-exclamacion.png" alt="signo-de-exclamacion" class="contenedor__encriptar__signo">Letras Minusculas y sin acentos</span>
+            <span class="contenedor__encriptar__mensaje"> <img src="./assets/signo-de-exclamacion.png" alt="signo-de-exclamacion" class="contenedor__encriptar__signo">Solo Letras Minusculas y sin Acentos</span>
             <div class="contenedor__encriptar__botones">
                 <button class="boton-encriptar" onclick="encriptarTexto()">Encriptar</button>
                 <button class="boton-desencriptar" onclick="desencriptarTexto()">Desencriptar</button> 
@@ -29,7 +34,7 @@
         <!-- AQUI EMPEZAMOS L;A SECCION DE DESENCRIPTAR-->
 
         <section class="contenedor__desencriptar">
-            <textarea name="texto-desencriptar" class="contenedor__texto__desencriptar" oninput="escritura()"></textarea>
+            <textarea name="texto-desencriptar" class="contenedor__texto__desencriptar" ></textarea>
             <div class="contenedor__desencriptar__letras">
                 <img src="./assets/Muñeco.png" alt="muñeco" class="contenedor__desencriptar__imagen">
                 <h1>Ningun mensaje fue encontrado</h1>
