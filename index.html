@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://unpkg.com/transition-style/transition.wipes.min.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/switchbtn.css">
     <title>Encriptador</title>
@@ -26,7 +27,7 @@
             <div class="contenedor__encriptar__botones">
                 <button class="boton-encriptar" onclick="encriptarTexto()">Encriptar</button>
                 <button class="boton-desencriptar" onclick="desencriptarTexto()">Desencriptar</button> 
-                <img src="/assets/contenedor-de-basura.png" alt="limpiar texto" alt="limpiar texto" class="contenedor__encriptar__limpiar" onclick="limpiarTexto()"> 
+                <img src="/assets/contenedor-de-basura.png" alt="limpiar texto" name="texto" class="contenedor__encriptar__limpiar" onclick="limpiarTexto(event)"> 
             </div>
           
         </section>
@@ -37,12 +38,13 @@
             <textarea name="texto-desencriptar" class="contenedor__texto__desencriptar" ></textarea>
             <div class="contenedor__desencriptar__letras">
                 <img src="./assets/Muñeco.png" alt="muñeco" class="contenedor__desencriptar__imagen">
-                <h1>Ningun mensaje fue encontrado</h1>
-                <p class="contenedor__desencriptar__mensaje">ingresa el texto que deses encriptar o desencriptar</p>
+                <h1>Ningun Mensaje fue Encontrado</h1>
+                <h5 class="contenedor__desencriptar__mensaje">Ingresa el texto que deses encriptar o desencriptar</h5>
             </div>
 
             <div class="contenedor__desencriptar__botones">
-                <button class="boton-copiar" onclick="copiarTexto()">Copiar</button>   
+                <button class="boton-copiar" onclick="copiarTexto()">Copiar</button>
+                <img src="/assets/contenedor-de-basura.png" alt="limpiar texto" name= "resultado" class="contenedor__encriptar__limpiar" onclick="limpiarTexto(event)">    
             </div>
             
         </section>

@@ -14,15 +14,28 @@ let areaEncriptar = document.querySelector(".contenedor__texto__encriptar");
 
 
 
-//CAMPO DONDE SE COLOCA EL TEXTO A DESENCRIPTAR
+//CAMPO DONDE SE COLOCA EL TEXTO RESULTADO
 let areaResultado = document.querySelector(".contenedor__texto__desencriptar");
+areaResultado.disabled=true;
 
+//FUNCION OCULTAR IMAGENES
+function ocultarImagenes(){
 
-//FUNCION PARA LIMPIAR EN EL CAMPO DEL RESULTADO
-function colocarResultado(texto){
-    areaResultado.value = texto;
     divDesencriptarLetras.style.visibility = "hidden";
     divDesencriptarbotones.style.visibility = "visible";
+}
+
+//FUNCION MOSTRAR IMAGENES
+function mostrarImagenes(){
+
+    divDesencriptarLetras.style.visibility = "visible";
+    divDesencriptarbotones.style.visibility = "hidden";
+}
+
+//FUNCION PARA COLOCAR RESULTADO Y QUITAR IMAGEN
+function colocarResultado(texto){
+    areaResultado.value = texto;
+    ocultarImagenes();
 }
 
 
@@ -130,9 +143,17 @@ function copiarTexto(){
 }
 
 //FUINCION DE LIMPIAR EL AREA DE TEXTO DE IZQUIERDA 
-function limpiarTexto(){
+function limpiarTexto(e){
+    
+    const basurero = e.target;
+    //console.log(basurero.name);
 
-    areaEncriptar.value = "";
+    if (basurero.name ==="texto") areaEncriptar.value = "";
+
+    else {
+        areaResultado.value = "";
+        mostrarImagenes();
+    }
 }
 
 //FUINCION cambiar de color
@@ -142,17 +163,17 @@ let checkbox= document.getElementById("inputCheck");
 function cambiaDeColor (){
 
         if(checkbox.checked){
-         document.documentElement.style.setProperty('--color-primario', '#86868B'); //BOTONES
-         document.documentElement.style.setProperty('--color-secundario', '#131313'); //FONDO BODY
-         document.documentElement.style.setProperty('--color-terciario', '#2B2B2B'); //TEXTAREA
-         document.documentElement.style.setProperty('--color-hover', '#84A7A1');  // OVER BOTONES
-         document.documentElement.style.setProperty('filter: saturate', '3');
+            document.documentElement.style.setProperty('--color-primario', '#86868B'); //BOTONES
+            document.documentElement.style.setProperty('--color-secundario', '#131313'); //FONDO BODY
+            document.documentElement.style.setProperty('--color-terciario', '#2B2B2B'); //TEXTAREA
+            document.documentElement.style.setProperty('--color-hover', '#84A7A1');  // OVER BOTONES
+            document.documentElement.style.setProperty('filter: saturate', '3');
         }
         else{   
-        document.documentElement.style.setProperty('--color-primario', '#052051'); 
-        document.documentElement.style.setProperty('--color-secundario', '#E9ECF8'); 
-        document.documentElement.style.setProperty('--color-terciario', '#FFFFFF'); 
-        document.documentElement.style.setProperty('--color-hover', '#0A3871');  
+            document.documentElement.style.setProperty('--color-primario', '#052051'); 
+            document.documentElement.style.setProperty('--color-secundario', '#E9ECF8'); 
+            document.documentElement.style.setProperty('--color-terciario', '#FFFFFF'); 
+            document.documentElement.style.setProperty('--color-hover', '#0A3871');  
         }
         
 
@@ -178,7 +199,7 @@ function MensajeError(texto){
     }else {
         Swal.fire({
             title: "¡Ups! Algo salio mal",
-            text: "INTENTA LO SIGUIENTE: \n ✦ Solo Letras Minusculas \n ✦ No Numeros ✦ No Caracteres especiales o acentos",
+            html: "INTENTA LO SIGUIENTE: <br>✦Solo Letras Minusculas <br>✦ No Números  <br>✦ No Caracteres especiales o acentos",
             showConfirmButton: false,
             timer: 4000,
             timerProgressBar: true,
